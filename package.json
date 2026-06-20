@@ -2,7 +2,7 @@
   "name": "it-skills-roadmap",
   "version": "1.0.0",
   "description": "Interactive IT Skills to Freelance Gigs Roadmap for CBU Students",
-  "homepage": "https://felixmusonda505-a11y.github.io/PROJECT/",
+  "homepage": "https://felixmusonda505-a11y.github.io/it-skills-roadmap",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",

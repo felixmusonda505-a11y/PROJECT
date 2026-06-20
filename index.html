@@ -248,8 +248,15 @@
         .tag-practice { background: #fff3e0; color: var(--copper); }
         .tag-project { background: #e3f2fd; color: #1565C0; }
         .tag-business { background: #f3e5f5; color: var(--purple); }
-        .tag-real { background: #fff3e0; color: var(--copper); }
+        .tag-realwork { background: #fff3e0; color: var(--copper); }
         .tag-upwork { background: #e8f5e9; color: var(--green); }
+        .tag-portfolio { background: #f3e5f5; color: var(--purple); }
+        .tag-fiverr { background: #e8f5e9; color: var(--green); }
+        .tag-local { background: #fff3e0; color: var(--copper); }
+        .tag-outreach { background: #e3f2fd; color: #1565C0; }
+        .tag-research { background: #f3e5f5; color: var(--purple); }
+        .tag-stretch { background: #fdecea; color: #C0392B; }
+        .tag-community { background: #e3f2fd; color: #1565C0; }
         
         .milestone {
             background: #fffbea;
@@ -293,6 +300,110 @@
             font-size: 8px;
             margin-top: 20px;
         }
+
+        .section-heading {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 18px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-heading:first-child {
+            margin-top: 0;
+        }
+
+        .media-card {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .media-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .media-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .media-title {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .media-desc {
+            font-size: 11px;
+            color: var(--mgray);
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .media-link {
+            display: inline-block;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: white;
+            background: var(--navy);
+            padding: 4px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .media-link:active {
+            opacity: 0.8;
+        }
+
+        .track-filter-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .track-filter-btn {
+            padding: 6px 11px;
+            border-radius: 16px;
+            border: 1.5px solid #ddd;
+            background: white;
+            color: var(--navy);
+            font-size: 10.5px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .track-filter-btn.active {
+            border-color: var(--gold);
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .milestone.stretch {
+            background: #fdecea;
+            border-top-color: #C0392B;
+        }
+
+        .milestone.stretch .milestone-label {
+            color: #C0392B;
+        }
     </style>
 </head>
 <body>
@@ -303,6 +414,7 @@
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab('roadmap')">📍 Roadmap</button>
             <button class="tab-btn" onclick="switchTab('resources')">📚 Resources</button>
+            <button class="tab-btn" onclick="switchTab('media')">🎬 Books & Videos</button>
             <button class="tab-btn" onclick="switchTab('schedule')">🕐 Schedule</button>
         </div>
     </div>
@@ -326,6 +438,12 @@
         <div id="resources" class="tab-content">
             <div class="path-label">ALL FREE RESOURCES</div>
             <div id="resources-content"></div>
+        </div>
+
+        <!-- BOOKS & VIDEOS TAB -->
+        <div id="media" class="tab-content">
+            <div class="track-filter-row" id="media-filter"></div>
+            <div id="media-content"></div>
         </div>
 
         <!-- SCHEDULE TAB -->
@@ -356,6 +474,8 @@
                             { text: "Master PivotTables — the most-requested skill", tag: "Practice" },
                             { text: "Build 3 projects: Invoice tracker, expense tracker, sales dashboard", tag: "Project" },
                             { text: "Learn Google Sheets — used by more small businesses", tag: "Free" },
+                            { text: "Learn keyboard shortcuts and Excel Tables for clean data ranges", tag: "Practice" },
+                            { text: "Build a student attendance and grade-tracking sheet for CBU", tag: "Project" },
                         ],
                         milestone: "You can build professional spreadsheets"
                     },
@@ -367,6 +487,8 @@
                             { text: "Build 4 dashboards: Sales, Inventory, Budget, KPI tracker", tag: "Project" },
                             { text: "Learn Google Looker Studio for professional dashboards", tag: "Free" },
                             { text: "Real data analysis project with insights", tag: "Project" },
+                            { text: "Learn Power Query basics for cleaning messy datasets", tag: "Free" },
+                            { text: "Try a beginner SQL course to complement spreadsheet skills", tag: "Stretch" },
                         ],
                         milestone: "You can create dashboards that businesses use"
                     },
@@ -378,6 +500,8 @@
                             { text: "Create Upwork and Fiverr profiles", tag: "Upwork" },
                             { text: "Apply to 15+ Excel jobs weekly on Upwork", tag: "Outreach" },
                             { text: "Collect testimonials and build portfolio", tag: "Portfolio" },
+                            { text: "Join 2 local data/Excel communities on Facebook or WhatsApp", tag: "Community" },
+                            { text: "Record a 2-minute screen-share demo of your best dashboard", tag: "Portfolio" },
                         ],
                         milestone: "First paying client ✓"
                     }
@@ -397,6 +521,8 @@
                             { text: "Build 3 static pages from scratch", tag: "Practice" },
                             { text: "Master CSS Flexbox and Grid", tag: "Free" },
                             { text: "Learn Git & GitHub", tag: "Free" },
+                            { text: "Build and deploy a personal landing page with GitHub Pages", tag: "Project" },
+                            { text: "Learn basic accessibility: alt text, semantic HTML, contrast", tag: "Free" },
                         ],
                         milestone: "You can build any static website"
                     },
@@ -408,6 +534,8 @@
                             { text: "Build contact forms, sliders, mobile menus", tag: "Project" },
                             { text: "Learn WordPress basics and customization", tag: "Free" },
                             { text: "Build 2 fake business websites for portfolio", tag: "Portfolio" },
+                            { text: "Learn how to call a public API and render JSON data on a page", tag: "Free" },
+                            { text: "Build a small productivity app (to-do list or budget tracker)", tag: "Project" },
                         ],
                         milestone: "You can build interactive websites"
                     },
@@ -419,6 +547,8 @@
                             { text: "Build your portfolio website", tag: "Portfolio" },
                             { text: "Do 2 free projects for real local businesses", tag: "Real work" },
                             { text: "Create Upwork and Fiverr profiles with 3 gig packages", tag: "Upwork" },
+                            { text: "Learn basic SEO so client sites actually get found", tag: "Free" },
+                            { text: "Write 3 case studies describing the problem you solved for each client", tag: "Portfolio" },
                         ],
                         milestone: "First paying web design client ✓"
                     }
@@ -438,6 +568,8 @@
                             { text: "Learn Canva Pro deeply (free for students)", tag: "Free" },
                             { text: "Recreate 10 logos from scratch in Canva", tag: "Practice" },
                             { text: "Study Behance and Dribbble daily for inspiration", tag: "Research" },
+                            { text: "Build a personal moodboard and define your design style", tag: "Practice" },
+                            { text: "Design 5 Instagram post templates for a fictional brand", tag: "Project" },
                         ],
                         milestone: "You understand design principles"
                     },
@@ -449,6 +581,8 @@
                             { text: "Design 3 complete brand identities (logo, cards, social kits)", tag: "Project" },
                             { text: "Design a mobile app UI with 5+ screens", tag: "Project" },
                             { text: "Learn basic photo editing in GIMP", tag: "Free" },
+                            { text: "Learn the basics of prototyping and clickable Figma flows", tag: "Free" },
+                            { text: "Run a 5-person usability test on one of your designs", tag: "Stretch" },
                         ],
                         milestone: "You have professional portfolio pieces"
                     },
@@ -460,6 +594,8 @@
                             { text: "Build Behance portfolio with 6-8 pieces", tag: "Portfolio" },
                             { text: "Create Fiverr gigs: Logo design, social media kit, flyers", tag: "Fiverr" },
                             { text: "Offer monthly social media packages to local businesses", tag: "Local" },
+                            { text: "Write a short case study for your strongest brand project", tag: "Portfolio" },
+                            { text: "Join 2 design communities for feedback and gig leads", tag: "Community" },
                         ],
                         milestone: "First paying design client ✓"
                     }
@@ -475,7 +611,48 @@
             { name: "The Odin Project", desc: "Free full-stack web dev curriculum", tag: "Web" },
             { name: "Google Looker Studio", desc: "Free professional dashboards", tag: "Data" },
             { name: "Upwork / Fiverr", desc: "Global freelance platforms", tag: "Freelance" },
+            { name: "Microsoft Learn (Excel path)", desc: "Free official Excel & Power BI training", tag: "Excel" },
+            { name: "MDN Web Docs", desc: "The reference every web developer keeps open", tag: "Web" },
+            { name: "Canva Design School", desc: "Free lessons on layout, color, and branding", tag: "Design" },
+            { name: "GitHub Student Developer Pack", desc: "Free pro tools and credits for students", tag: "Web" },
+            { name: "Kaggle", desc: "Free datasets and notebooks to practice data analysis", tag: "Data" },
+            { name: "Behance / Dribbble", desc: "Portfolios for inspiration and feedback", tag: "Design" },
+            { name: "Local Business WhatsApp/Facebook groups", desc: "Best place in Kitwe/Copperbelt to find first clients", tag: "Freelance" },
         ];
+
+        const books = {
+            excel: [
+                { title: "Excel 2019 Bible", author: "Michael Alexander & Dick Kusleika", desc: "The most complete reference for formulas, PivotTables, and dashboards.", url: "https://www.google.com/search?q=Excel+2019+Bible+Michael+Alexander" },
+                { title: "Storytelling with Data", author: "Cole Nussbaumer Knaflic", desc: "How to turn spreadsheets into dashboards people actually understand.", url: "https://www.google.com/search?q=Storytelling+with+Data+Cole+Nussbaumer+Knaflic" },
+            ],
+            web: [
+                { title: "Eloquent JavaScript", author: "Marijn Haverbeke", desc: "Free online book that builds real JavaScript understanding from zero.", url: "https://eloquentjavascript.net/" },
+                { title: "HTML and CSS: Design and Build Websites", author: "Jon Duckett", desc: "The clearest visual introduction to HTML/CSS for beginners.", url: "https://www.google.com/search?q=HTML+and+CSS+Jon+Duckett" },
+            ],
+            design: [
+                { title: "The Non-Designer's Design Book", author: "Robin Williams", desc: "Short, practical guide to typography, alignment, and contrast.", url: "https://www.google.com/search?q=The+Non-Designer%27s+Design+Book+Robin+Williams" },
+                { title: "Don't Make Me Think", author: "Steve Krug", desc: "The classic, easy read on usability and UX thinking.", url: "https://www.google.com/search?q=Don%27t+Make+Me+Think+Steve+Krug" },
+            ],
+            general: [
+                { title: "Atomic Habits", author: "James Clear", desc: "Useful for sticking to the daily 06:00–07:00 / 17:00–19:00 routine.", url: "https://www.google.com/search?q=Atomic+Habits+James+Clear" },
+                { title: "The $100 Startup", author: "Chris Guillebeau", desc: "How to turn a skill into your first freelance income.", url: "https://www.google.com/search?q=The+%24100+Startup+Chris+Guillebeau" },
+            ]
+        };
+
+        const videos = {
+            excel: [
+                { title: "Excel Full Course for Beginners", channel: "Kevin Stratvert", desc: "A complete free walkthrough of core Excel skills.", url: "https://www.youtube.com/results?search_query=Excel+Full+Course+for+Beginners+Kevin+Stratvert" },
+                { title: "PivotTables in 10 Minutes", channel: "Leila Gharani", desc: "Fast, practical PivotTable tutorial for real datasets.", url: "https://www.youtube.com/results?search_query=PivotTables+Leila+Gharani" },
+            ],
+            web: [
+                { title: "freeCodeCamp Responsive Web Design", channel: "freeCodeCamp.org", desc: "The full certification course, free on YouTube.", url: "https://www.youtube.com/results?search_query=freeCodeCamp+Responsive+Web+Design+Certification" },
+                { title: "JavaScript Crash Course", channel: "Traversy Media", desc: "A fast, beginner-friendly intro to JS fundamentals.", url: "https://www.youtube.com/results?search_query=JavaScript+Crash+Course+Traversy+Media" },
+            ],
+            design: [
+                { title: "Figma UI Design Tutorial", channel: "The Futur", desc: "Learn Figma while designing a real mobile app screen.", url: "https://www.youtube.com/results?search_query=Figma+UI+Design+Tutorial+The+Futur" },
+                { title: "Logo Design Principles", channel: "Flux Academy", desc: "How professional logos are actually constructed.", url: "https://www.youtube.com/results?search_query=Logo+Design+Principles+Flux+Academy" },
+            ]
+        };
 
         let currentPath = 'excel';
 
@@ -493,6 +670,7 @@
             event.target.classList.add('active');
             
             if (tab === 'resources') renderResources();
+            if (tab === 'media') renderMedia();
             if (tab === 'schedule') renderSchedule();
         }
 
@@ -513,7 +691,7 @@
                     <div>${phase.tasks.map(task => `
                         <div class="task" onclick="this.classList.toggle('done')">
                             <div class="task-checkbox">${this.classList.contains('done') ? '✓' : ''}</div>
-                            <div class="task-text">${task.text}<span class="task-tag tag-${task.tag.toLowerCase()}">${task.tag}</span></div>
+                            <div class="task-text">${task.text}<span class="task-tag tag-${task.tag.toLowerCase().replace(/\s+/g, '')}">${task.tag}</span></div>
                         </div>
                     `).join('')}</div>
                     <div class="milestone">
@@ -541,6 +719,69 @@
                 </div>`;
             });
             document.getElementById('resources-content').innerHTML = html;
+        }
+
+        let mediaTrack = 'excel';
+
+        function selectMediaTrack(track) {
+            mediaTrack = track;
+            document.querySelectorAll('.track-filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderMediaContent();
+        }
+
+        function renderMedia() {
+            const trackLabels = { excel: '📊 Excel & Analytics', web: '🌐 Web Dev', design: '🎨 Design' };
+            let filterHtml = '';
+            Object.keys(trackLabels).forEach(key => {
+                filterHtml += `<button class="track-filter-btn ${key === mediaTrack ? 'active' : ''}" onclick="selectMediaTrack('${key}')">${trackLabels[key]}</button>`;
+            });
+            document.getElementById('media-filter').innerHTML = filterHtml;
+            renderMediaContent();
+        }
+
+        function renderMediaContent() {
+            const trackBooks = books[mediaTrack] || [];
+            const generalBooks = books.general || [];
+            const trackVideos = videos[mediaTrack] || [];
+
+            let html = '<div class="section-heading">📖 Recommended books</div>';
+            trackBooks.forEach(b => {
+                html += `<div class="media-card">
+                    <div class="media-icon" style="background: var(--navy);">📘</div>
+                    <div class="media-body">
+                        <div class="media-title">${b.title}</div>
+                        <div class="media-desc">${b.author} — ${b.desc}</div>
+                        <a class="media-link" href="${b.url}" target="_blank" rel="noopener">Find this book</a>
+                    </div>
+                </div>`;
+            });
+
+            html += '<div class="section-heading">🎥 Recommended videos</div>';
+            trackVideos.forEach(v => {
+                html += `<div class="media-card">
+                    <div class="media-icon" style="background: var(--copper);">▶</div>
+                    <div class="media-body">
+                        <div class="media-title">${v.title}</div>
+                        <div class="media-desc">${v.channel} — ${v.desc}</div>
+                        <a class="media-link" href="${v.url}" target="_blank" rel="noopener">Watch on YouTube</a>
+                    </div>
+                </div>`;
+            });
+
+            html += '<div class="section-heading">🌱 General growth reads</div>';
+            generalBooks.forEach(b => {
+                html += `<div class="media-card">
+                    <div class="media-icon" style="background: var(--purple);">📗</div>
+                    <div class="media-body">
+                        <div class="media-title">${b.title}</div>
+                        <div class="media-desc">${b.author} — ${b.desc}</div>
+                        <a class="media-link" href="${b.url}" target="_blank" rel="noopener">Find this book</a>
+                    </div>
+                </div>`;
+            });
+
+            document.getElementById('media-content').innerHTML = html;
         }
 
         function renderSchedule() {

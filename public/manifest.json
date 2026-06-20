@@ -1,0 +1,49 @@
+{
+  "short_name": "IT Skills Roadmap",
+  "name": "IT Skills Roadmap — CBU Student",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/it-skills-roadmap/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/it-skills-roadmap/",
+  "theme_color": "#0B1F3A",
+  "description": "Your step-by-step plan from HTML/CSS basics to landing paying freelance clients in 8-12 weeks",
+  "categories": ["education", "productivity"],
+  "screenshots": [
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
